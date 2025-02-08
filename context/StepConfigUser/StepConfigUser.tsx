@@ -1,5 +1,5 @@
 import { createContext, useState } from "react"
-import { StepConfigUserContextProviderProps, StepConfigUserContextType } from "./SteoConfigUser.types"
+import { StepConfigUserContextProviderProps, StepConfigUserContextType } from "./StepConfigUser.types"
 
 export const StepConfigUserContext = createContext<StepConfigUserContextType>({
   step: 1,
