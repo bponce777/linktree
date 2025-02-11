@@ -6,7 +6,7 @@ import { HanlderSteps, LinkProfile, ProfileInfo } from './components'
 import { User, Link } from '@prisma/client'
 import { useUser } from '@clerk/nextjs'
 import { LoaderProfile } from '@/components/shared/LoaderProfile'
-import { StepConfigUserProvider } from '@/context'
+import { StepConfigUserProvider, UserProvider } from '@/context'
 
 export default function HomePage() {
   const { user } = useUser();
@@ -41,7 +41,7 @@ export default function HomePage() {
   }
 
   return (
-    <div>
+    <UserProvider>
       <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-4 px-4">
         <div>
           <LinkProfile />
@@ -60,6 +60,6 @@ export default function HomePage() {
 
         </div>
       </div>
-    </div>
+    </UserProvider>
   )
 }
